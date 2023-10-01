@@ -32,4 +32,22 @@ class NewScreen:
             self.turt.pendown()
 
         self.screen.update()
-        self.screen.exitonclick()
+
+class NewPaddle(Turtle):
+    """Creates two new paddles"""
+
+    def __init__(self, xcoord, ycoord):
+        super().__init__()
+        self.shape('square')
+        self.color('white')
+        self.shapesize(stretch_wid=5, stretch_len=1)
+        self.penup()
+        self.goto(xcoord, ycoord)
+
+    def pup(self):
+        if self.ycor() < 180:
+            self.goto(self.xcor(), self.ycor()+10)
+
+    def pdown(self):
+        if self.ycor() > -180:
+            self.goto(self.xcor(), self.ycor()-10)
