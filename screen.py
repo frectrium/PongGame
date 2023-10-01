@@ -36,10 +36,10 @@ class NewScreen:
 class NewPaddle(Turtle):
     """Creates two new paddles"""
 
-    def __init__(self, xcoord, ycoord):
+    def __init__(self, xcoord, ycoord, color):
         super().__init__()
         self.shape('square')
-        self.color('white')
+        self.color(color)
         self.shapesize(stretch_wid=5, stretch_len=1)
         self.penup()
         self.goto(xcoord, ycoord)
